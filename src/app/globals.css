@@ -5,7 +5,7 @@
 @layer utilities {
 
     .auth__layout {
-        background-image: url('./assets/images/bg-auth.jpg');
+        background-image: url('../assets/images/bg-auth.jpg');
         background-color: rgba(0, 0, 0, 0.575);
         background-blend-mode: color;
         background-position: center;
