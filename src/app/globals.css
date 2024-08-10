@@ -2,32 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+    .auth__layout {
+        background-image: url('./assets/images/bg-auth.jpg');
+        background-color: rgba(0, 0, 0, 0.575);
+        background-blend-mode: color;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100vh;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login__form {
+        @apply container bg-stone-900 py-8 px-6 max-w-[500px] w-full rounded-lg 
+    }
+
+    .dashboard {
+        @apply flex h-screen relative
+    }
+
+    .sidemenu {
+        @apply absolute h-screen flex flex-col -left-[100%] md:relative md:left-0 bg-stone-950 max-w-72 w-full py-10 px-8
+    }
+
+    .sidemenu__logo {
+        @apply font-extrabold text-xl mb-10 flex items-center
+    }
+
+    .sidemenu__link {
+        @apply flex gap-4 items-center p-3 rounded-lg font-semibold transition-colors duration-1000 hover:bg-gradient-to-tr from-primary-700 to-indigo-600
+    }
+
+    .sidemenu__link span {
+        @apply text-primary text-xl
+    }
+
+    .sidemenu__link:hover span {
+        @apply text-white
+    }
+
+    .sidemenu__link--active {
+        @apply bg-gradient-to-br from-primary-700 to-indigo-600
+    }
+
+    .sidemenu__link--active span {
+        @apply text-white
+    }
+
+    .header {
+        @apply container flex flex-col gap-4 md:flex-row justify-between md:items-center
+    }
+
+    .product__list {
+        @apply grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5
+    }
+
+    .product__card {
+        @apply bg-stone-900 max-w-[250px] p-4 rounded-md
+    }
+
+    .cart__item {
+        @apply flex bg-stone-900 px-3 py-4 gap-4 items-center rounded-lg
+    }
+
+    .checkout {
+        @apply container pt-8 grid grid-cols-5 gap-8
+    }
+
+    .checkout__form {
+        @apply bg-stone-900 p-6 rounded-lg space-y-4
+    }
+}
+
+
+@layer components {
+    .container {
+        @apply max-w-[90%] mx-auto
+    }
+
+    .btn-primary {
+        @apply bg-gradient-to-br from-primary-600 to-indigo-700
+    }
 }
