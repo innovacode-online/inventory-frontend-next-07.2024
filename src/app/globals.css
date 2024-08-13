@@ -36,7 +36,7 @@
     }
 
     .sidemenu__link {
-        @apply flex gap-4 items-center p-3 rounded-lg font-semibold transition-colors duration-1000 hover:bg-gradient-to-tr from-primary-700 to-indigo-600
+        @apply flex gap-4 items-center p-3 rounded-lg font-semibold transition-colors cursor-pointer hover:bg-gradient-to-tr from-primary-700 to-indigo-600
     }
 
     .sidemenu__link span {
