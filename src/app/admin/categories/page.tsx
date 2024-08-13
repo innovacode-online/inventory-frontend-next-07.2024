@@ -1,8 +1,25 @@
+import { HeaderPage } from "@/modules/shared";
+import { CategoryTable, getCategories } from "@/modules/categories";
 
-export default function CategoriesPage() {
+
+
+
+export default async function CategoriesPage() {
+
+    const categories = await getCategories();
+
     return (
-        <div>
-            <h1>Categories Page</h1>
-        </div>
+        <>
+            <HeaderPage
+                btnTitle="Agregar Categoria"
+                description="Gestiona las categorias de los productos"
+                pathname="/admin/categories/new"
+                title="Categorias"
+            />
+
+            <CategoryTable
+                categories={ categories }
+            />
+        </>
     );
 }
