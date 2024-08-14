@@ -3,10 +3,17 @@ import { CategoryTable, getCategories } from "@/modules/categories";
 
 
 
+interface Params {
+    searchParams: {
+       page: string | undefined
+    }
+}
 
-export default async function CategoriesPage() {
+export default async function CategoriesPage({ searchParams }: Params) {
 
-    const categories = await getCategories();
+
+    const { categories, meta } = await getCategories(searchParams.page);
+
 
     return (
         <>
@@ -18,6 +25,7 @@ export default async function CategoriesPage() {
             />
 
             <CategoryTable
+                meta={ meta }
                 categories={ categories }
             />
         </>

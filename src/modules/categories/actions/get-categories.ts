@@ -2,12 +2,18 @@
 
 import inventoryDb from "@/db/inventoryDb";
 import { ICategoriesResponse } from "@/modules/categories";
+import { revalidatePath } from "next/cache";
 
 
-export const getCategories = async () => {
+export const getCategories = async (page: number | string = 1) => {
     try {
-        const { data } = await inventoryDb.get<ICategoriesResponse>("/categories");
-        return data.categories
+        const { data } = await inventoryDb.get<ICategoriesResponse>(`/categories`, {
+            params: {
+                page
+            }
+        });
+
+        return data
         
     } catch (error: any) {
         console.log(error);
