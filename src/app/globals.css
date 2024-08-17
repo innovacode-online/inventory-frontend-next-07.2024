@@ -55,6 +55,10 @@
         @apply text-white
     }
 
+    .sidemenu__avatar {
+        @apply shadow-lg bg-stone-900 px-4 py-6 rounded-2xl text-center
+    }
+
     .header {
         @apply container flex flex-col gap-4 md:flex-row justify-between md:items-center
     }

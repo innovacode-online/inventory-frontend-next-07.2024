@@ -1,11 +1,19 @@
 import React from 'react'
 import Image from 'next/image'
+import { cookies } from 'next/headers'
+
+import { IUser } from '@/modules/auth'
+import { sideMenuOptions } from '@/constants/side-menu-options'
 
 import Logo from '@/assets/images/logo.png'
-import { sideMenuOptions } from '@/constants/side-menu-options'
 import { SideMenuOption } from './SideMenuOption'
+import { Button } from '@nextui-org/react'
+import { SideMenuAvatar } from './SideMenuAvatar'
 
 export const SideMenu = () => {
+
+    const user = JSON.parse( cookies().get("INV_NEXT_USER")?.value! ) as IUser;
+
     return (
         <nav className='sidemenu'>
             
@@ -38,7 +46,13 @@ export const SideMenu = () => {
                 }
             </ul>
 
+            <div className="flex-1"></div>
+
             {/* USER PROFILE */}
+            <SideMenuAvatar
+                user={ user }
+            />
+
         </nav>
     )
 }
