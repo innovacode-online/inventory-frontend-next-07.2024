@@ -1,11 +1,13 @@
+// ACTIONS
+export { getCategories } from "./actions/get-categories";
+export { createCategory } from './actions/create-category';
+export { updateCategory } from "./actions/update-category";
+
 // COMPONENTS
 export { CategoryTable } from "./components/category-table/CategoryTable";
 export { NewCategoryForm } from './components/NewCategoryForm';
 export { DeleteCategoryModal } from './components/category-table/DeleteCategoryModal';
 
-// ACTIONS
-export { getCategories } from "./actions/get-categories";
-export { createCategory } from './actions/create-category';
 
 // INTERFACES
 export type { ICategory } from './interfaces/category';

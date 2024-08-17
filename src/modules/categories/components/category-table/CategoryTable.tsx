@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { DeleteCategoryModal, ICategory } from '@/modules/categories'
 import { IPaginationMeta } from '@/modules/shared';
 import { Pagination, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react'
+import { EditCategoryModal } from './EditCategoryModal';
 
 interface Props {
     categories: ICategory[];
@@ -38,6 +39,7 @@ export const CategoryTable = ({ categories, meta }: Props) => {
                                     <TableCell>17 de Septiembre de 2024</TableCell>
                                     <TableCell>17 de Septiembre de 2024</TableCell>
                                     <TableCell>
+                                        <EditCategoryModal category={ category } />
                                         <DeleteCategoryModal category={ category } />
                                     </TableCell>
                                 </TableRow>

@@ -1,13 +1,13 @@
 "use client"
-
 import { useState } from 'react';
+import { toast } from 'sonner';
+
 
 import { ICategory } from '@/modules/categories';
+import { deleteCategory } from '../../actions/delete-category';
 
 import { Delete01Icon } from 'hugeicons-react';
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
-import { deleteCategory } from '../../actions/delete-category';
-import { toast } from 'sonner';
 
 
 
