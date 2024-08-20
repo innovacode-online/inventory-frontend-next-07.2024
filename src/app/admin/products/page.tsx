@@ -1,8 +1,21 @@
+import { ProductTable } from "@/modules/products";
+import { getProducts } from "@/modules/products/actions/get-products";
+import { HeaderPage } from "@/modules/shared";
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+
+    const { data } = await getProducts();
+
     return (
-        <div>
-            <h1>Products Page</h1>
-        </div>
+        <>
+            <HeaderPage
+                title="Productos"
+                description="Gestiona los productos del inventario"
+                btnTitle="Agregar producto"
+                pathname="/admin/products/new"
+            />
+
+            <ProductTable  products={ data!.products }/>
+        </>
     );
 }
